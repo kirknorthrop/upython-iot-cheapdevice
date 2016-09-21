@@ -32,35 +32,27 @@ You want to first off erase the flash. Bear in mind that `/dev/tty.usbserial-A50
 
 Then you need to download the Micro Python firmware for the ESP8266 from (http://micropython.org/download/#esp8266)
 
-Then you can flash 
+Then you can flash the firmware - obviously change the port and the filename...
 `esptool.py --port /dev/tty.usbserial-A50285BI --baud 57600 write_flash --flash_size=8m -fm dio 0 esp8266-20160710-v1.8.2.bin`
 
+You'll then want to connect to the ESP8266 via the USB (after remembering to change GPIO0 to 3V3 and cycling the power of the chip). [Coolterm](http://freeware.the-meiers.org/#CoolTerm) is good for this/
 
-coolterm   http://freeware.the-meiers.org/#CoolTerm
+Currently due to the fact that the ESP8266 Micro Python came from a Kickstarter, WebREPL is not available by default. Therefore we need to do the following.
 
+First, connect via USB/Serial and type the following
+`import webrepl; webrepl.start()`
 
-Currently… WebREPL not available. Need the kickstarter version for that. Check before PyCon…
+Set a password - and the ESP8266 will reboot. 
 
-http://forum.micropython.org/viewtopic.php?f=16&t=2140
+Then connect via USB/Serial again and run that command again.
 
-import webrepl; webrepl.start()
+You then need to connect using WebREPL, which can be found here: (http://micropython.org/webrepl/)
 
-Set a password - it will reboot. 
+Then you can:
+- download boot.py
+- uncomment the WebREPL lines
+- put it back again
 
-Then USB repl again and run that command again
+Then WebREPL will start on each boot.
 
-Download boot.py
-uncomment the webrepl lines
-put it back again
-
-Then webrepl will start on each boot.
-
-
-
-
-
-
-
-
-
-Drivers https://hackaday.io/project/11660/logs/sort/oldest
+You can then use my [IoTWifi project](https://github.com/kirknorthrop/IoTWiFi).
