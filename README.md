@@ -1,6 +1,8 @@
 # Micro Python, the Internet of Things and the £3 device
 
-Please find the slides for the above presentation, as well as some details on how to install Micro Python on a ESP8266 chip.
+Please find the slides for the above talk, as well as some details on how to install Micro Python on a ESP8266 chip.
+
+If you'd like to see me giving this talk, please see here: (https://www.youtube.com/watch?v=3ood9xagDCk)
 
 Slides Content &copy; Kirk Northrop 2016, except images which remain the copyright of their original owners.
 
